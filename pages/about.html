@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+		
+	<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+		<img class="w3-image" src="assets/images/foodWallpaper.png" width="1600">
+		
+		<div class="w3-display-bottomleft w3-padding-xlarge">
+			<h1 class="w3-jumbo w3-tangerine w3-text-white">Foodie Recipes</h1>
+		</div>
+	</header>
+
+	<div class="w3-content" style="max-width:1100px">
+			
+		<div class="w3-row w3-padding-64" id="detail">
+		
+			<div class="w3-col m6 w3-padding-large w3-hide-small">
+				<img src="assets/images/cherries.PNG" class="w3-round-jumbo w3-image" alt="Table Setting" width="600" height="750">
+			</div>
+
+			<div class="w3-col m6 w3-padding-large">
+				<h1 class="w3-center">About Foodies Recipe</h1><br>
+				<p class="w3-large">
+					Foodies Recipe was founded in 2016 by blabla in lorem ipsum dolor sit amet, lorem ipsum dolor sit amet 
+					elit consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				</p>
+		  
+				<p class="w3-large w3-text-grey w3-hide-medium">
+					Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet elit consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor 
+					sit amet tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+					nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+					pariatur.We only use 
+				</p>
+			</div>		
+		</div>
+	  
+	  <hr>
+	  	  
+		<div class="w3-row w3-padding-64" id="recipe">
+			<div class="w3-container w3-padding-64" id="contact">
+			<h1 class="w3-tangerine w3-jumbo">Requested Recipes</h1><br>
+			
+			<div class="w3-card-2">
+				<div class="w3-container w3-padding w3-teal">
+				  <h4>Popular Posts</h4>
+				</div>
+				
+				<ul class="w3-ul w3-hoverable w3-white" ng-repeat="foodReq in foodRequests">
+				  <li class="w3-padding-16">
+					<p>{{ foodReq.user }} ( {{foodReq.userEmail}} )</p><hr>
+					<p>{{ foodReq.foodReqName }}</p>
+					<p>{{ foodReq.reqMessage }}</p>
+				  </li>				    
+				</ul>
+				
+			 </div>
+
+			
+			</div>
+		</div>
+
+	  <hr>
+	  
+		<div class="w3-container w3-padding-64" id="contact">
+			<h1 class="w3-tangerine w3-jumbo">Request for New Recipes</h1><br>
+			<p>Do not hesitate to request new recipe to us. You can help us to improve our website by requesting new recipes. We'll get back to you as soon as we can.</p>
+			<p class="w3-text-blue-grey w3-large"><b>Foodies Recipe, Hogwarts Street, 43043 California</b></p>
+			<form>
+				<p><input class="w3-input w3-padding-16" type="text" ng-model="txtUserName" placeholder="Name"></p>
+				<p><input class="w3-input w3-padding-16" type="text" ng-model="txtFoodRecipe" placeholder="New Food Recipe"></p>
+				<p><input class="w3-input w3-padding-16" type="text" ng-model="txtUserEmail" placeholder="Email"></p>
+				<p><input class="w3-input w3-padding-16" type="text" ng-model="txtRequirement" placeholder="Message \ Special requirements"></p>
+				<p><button class="w3-btn w3-padding w3-section" type="submit" ng-click="addFoodRequests()">SEND MESSAGE</button></p>	
+			</form>
+			
+			<div class="w3-container w3-white w3-text-red">
+				<p><b>{{ errorMessage }}</b></p>
+			</div>
+		</div>
+	  
+		
+	</div>
+</html>

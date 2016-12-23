@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>	
+	<body>
+		<div class="w3-container w3-padding-128">
+			
+			<div class="w3-row-padding">
+				
+				<div class="w3-third">
+					<div class = "w3-container w3-center">
+						<img id="foodDisplay" src="assets/images/pizza.png" style="width:250px; height:250px;">
+					</div>
+					
+					<br><br>
+					<div class = "w3-container">
+						<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable" id="resultTable">
+							<thead class="w3-dark-grey w3-xlarge w3-wide">
+								<th class="w3-tangerine" style="width:30%">Food</th>
+								<th class="w3-tangerine">Type</th>
+								<th style="display: none;">Pict Source</th>
+								<th style="display: none;">How to cook</th>
+							</thead>
+							
+							<tr id={{food.name}} ng-repeat="food in listOfFood">
+								<td>{{ food.name }}</td>
+								<td>{{ food.ingredients }}</td>
+								<td ng-repeat="method in food.method" class="foodMethod" style="display: none;">{{ method }}</td>
+								<td class="foodPict" style="display: none;">{{ food.pict }}</td>
+								
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				<div class="w3-twothird">
+					<h1 class="foodTitle w3-tangerine w3-jumbo">Food</h1>					 				
+					<div id="cookingMethod">
+						<p id="test">
+							Cooking Method goes right here. Select menu in the table to see how to make it.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>
